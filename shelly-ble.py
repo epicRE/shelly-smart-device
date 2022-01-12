@@ -93,7 +93,7 @@ def scan_for_devices():
 
         exit(1)
 def printHi():
-    print("[**] Shelly Plus 1 BLE Script by KXynos (2022) [**]")
+    print("[**] Shelly Plus 1 BLE Script by K.Xynos (2022) [**]")
 
 if __name__ == "__main__":
     printHi()
