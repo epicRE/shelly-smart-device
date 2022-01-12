@@ -116,3 +116,35 @@ The command would then include the following:
 ```
 {"id":"1641784978","method":"shelly.getconfig", "auth":{"realm":"shellyplus1-111111111111","username":"admin","nonce":1641861674,"cnonce":1641950701,"response":"922e52ec8855052c97507f812e97a3d1f473d3be6697fff18f789152f42cbc55","algorithm":"SHA-256"}
 ```
+
+### Python Script - shelly-ble.py
+
+The script I provide makes use of the ```bleak``` and ```construct``` Python libraries. Check the [requirements.txt](requirements.txt) file.
+
+### How to get started:
+
+```
+$ git clone https://github.com/epicRE/shelly-smart-device
+$ cd shelly-smart-device
+$ virtualenv pyenv
+$ source pyenv/bin/activate
+(pyenv)$ pip3 install -r requirements.txt
+(pyenv)$ python3 shelly-ble.py
+
+```
+Scan mode (when ```get_device = True```, this is the default initial state of the script)
+
+```
+[**] Shelly Plus 1 BLE Script by KXynos (2022)
+[+] Running scan
+Address: Description
+xxxx-xxx-xxx-xxxx-xxxxx: ShellyPlus1-xxxxxxxxxxx
+```
+
+Open ```shelly-ble.py``` with your favourit editor and paste this value ```XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX``` into the variable ```address```. Look for the ShellyPlus1-xxxxxxxxxxx string at the end of the each line; this is the device name(address)(ini MS Windows it will have a different format) and serial number (you can match it with the one on the device). Also set ```get_device = False``` (we don't need it anymore, you might need it again if you change devices or get another one).
+
+Run the script a second time:
+
+```
+(pyenv)$ python3 shelly-ble.py
+```
